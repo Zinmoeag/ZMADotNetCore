@@ -2,6 +2,7 @@
 //Console.WriteLine("Hello, World!");
 //using DotNet7TrainingBatch.ConsoleApp.AdoDotNetExamples;
 using DotNet7TrainingBatch.ConsoleApp.AdoDotNetExamples;
+using DotNet7TrainingBatch.ConsoleApp.DapperExamples;
 using System.Data;
 using System.Data.SqlClient;
 using System.Reflection.Metadata;
@@ -39,13 +40,23 @@ using System.Reflection.Metadata;
 //Console.WriteLine("Connectio is Closed");
 
 
-// adoDotNet CRUD ------
-AdoDotNetExample adoDotNetExample = new AdoDotNetExample();
-adoDotNetExample.Read();
-adoDotNetExample.Edit(5);
-adoDotNetExample.Create("tin tin", "this is Tin Tin", "Tin Tin is back");
-adoDotNetExample.Update(3, "tin tin", "this is Tin Tin", "Tin Tin is back");
-adoDotNetExample.Delete(3);
+// adoDotNet CRUD ------`
+//AdoDotNetExample adoDotNetExample = new AdoDotNetExample();
+//adoDotNetExample.Read();
+//adoDotNetExample.Edit(5);
+//adoDotNetExample.Create("tin tin", "this is Tin Tin", "Tin Tin is back");
+//adoDotNetExample.Update(3, "tin tin", "this is Tin Tin", "Tin Tin is back");
+//adoDotNetExample.Delete(3);
+
+DapperExample dapperExample = new DapperExample();
+
+//dapperExample.Read();
+//dapperExample.Edit(1);
+//dapperExample.Edit(21);
+//dapperExample.Create("this is Tin win", "tin win", "Tin win is back");
+//dapperExample.Update(4,"this is Tin win", "tin win", "Tin win is back");
+dapperExample.Delete(4);
+
 
 
 
