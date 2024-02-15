@@ -3,6 +3,7 @@
 //using DotNet7TrainingBatch.ConsoleApp.AdoDotNetExamples;
 using DotNet7TrainingBatch.ConsoleApp.AdoDotNetExamples;
 using DotNet7TrainingBatch.ConsoleApp.DapperExamples;
+using DotNet7TrainingBatch.ConsoleApp.EFCoreExamples;
 using System.Data;
 using System.Data.SqlClient;
 using System.Reflection.Metadata;
@@ -55,7 +56,16 @@ DapperExample dapperExample = new DapperExample();
 //dapperExample.Edit(21);
 //dapperExample.Create("this is Tin win", "tin win", "Tin win is back");
 //dapperExample.Update(4,"this is Tin win", "tin win", "Tin win is back");
-dapperExample.Delete(4);
+//dapperExample.Delete(4);
+
+EFCoreExample eFCoreExample = new EFCoreExample();
+//eFCoreExample.Read();
+//eFCoreExample.Edit(1);
+//eFCoreExample.Edit(20);
+//eFCoreExample.Create("ko zin", "ko zin is back", "this is ko zin blah blah");
+//eFCoreExample.Update(1, "ko zin", "ko zin is back", "this is ko zin blah blah");
+//eFCoreExample.Delete(15);
+
 
 
 

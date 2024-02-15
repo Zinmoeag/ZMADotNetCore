@@ -1,13 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace DotNet7TrainingBatch.ConsoleApp.Models
 {
+    [Table("tbl_blogs")]
     public class BlogModel
     {
+        [Key]
         public int blog_id { get; set; }
         public string blog_title { get; set; }
         public string blog_author { get; set; }
