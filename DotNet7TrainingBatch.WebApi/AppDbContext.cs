@@ -27,3 +27,4 @@ namespace DotNet7TrainingBatch.WebApi
         public DbSet<BlogModel> Blogs { get; set; }
     }
 }
+

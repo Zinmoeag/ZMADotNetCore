@@ -4,6 +4,7 @@
 using DotNet7TrainingBatch.ConsoleApp.AdoDotNetExamples;
 using DotNet7TrainingBatch.ConsoleApp.DapperExamples;
 using DotNet7TrainingBatch.ConsoleApp.EFCoreExamples;
+using DotNet7TrainingBatch.ConsoleApp.HttpClientExamples;
 using System.Data;
 using System.Data.SqlClient;
 using System.Reflection.Metadata;
@@ -65,6 +66,13 @@ EFCoreExample eFCoreExample = new EFCoreExample();
 //eFCoreExample.Create("ko zin", "ko zin is back", "this is ko zin blah blah");
 //eFCoreExample.Update(1, "ko zin", "ko zin is back", "this is ko zin blah blah");
 //eFCoreExample.Delete(15);
+
+
+Console.WriteLine("waiting for api ....");
+Console.ReadKey();
+
+HttpClientExample httpClientExample = new HttpClientExample();
+await httpClientExample.Run();
 
 
 
