@@ -1,13 +1,11 @@
 ﻿// See https://aka.ms/new-console-template for more information
 //Console.WriteLine("Hello, World!");
 //using DotNet7TrainingBatch.ConsoleApp.AdoDotNetExamples;
-using DotNet7TrainingBatch.ConsoleApp.AdoDotNetExamples;
 using DotNet7TrainingBatch.ConsoleApp.DapperExamples;
 using DotNet7TrainingBatch.ConsoleApp.EFCoreExamples;
 using DotNet7TrainingBatch.ConsoleApp.HttpClientExamples;
-using System.Data;
-using System.Data.SqlClient;
-using System.Reflection.Metadata;
+using DotNet7TrainingBatch.ConsoleApp.RefitExamples;
+using DotNet7TrainingBatch.ConsoleApp.RestClientExamples;
 
 //making connection
 //SqlConnectionStringBuilder ConnectionStringBuilder = new SqlConnectionStringBuilder();
@@ -72,7 +70,13 @@ Console.WriteLine("waiting for api ....");
 Console.ReadKey();
 
 HttpClientExample httpClientExample = new HttpClientExample();
-await httpClientExample.Run();
+//await httpClientExample.Run();
+
+RestClientExample restClientExample = new RestClientExample();
+//await restClientExample.Run();
+
+RefitExample refitExample = new RefitExample();
+await refitExample.Run();
 
 
 
