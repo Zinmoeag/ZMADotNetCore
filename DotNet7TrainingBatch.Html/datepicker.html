@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fengyuanchen/datepicker@0.6.5/dist/datepicker.min.css">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input data-toggle="datepicker">
+    <textarea data-toggle="datepicker"></textarea>
+    <div data-toggle="datepicker"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+   <!-- datepicker -->
+   <script src="https://cdn.jsdelivr.net/npm/@fengyuanchen/datepicker@0.6.5/dist/datepicker.min.js"></script>
+
+  <script>
+    $('[data-toggle="datepicker"]').datepicker({
+        autoHide : true,
+        format : "dd-mm-yyyy",
+    });
+  </script>
+
+</body>
+</html>
