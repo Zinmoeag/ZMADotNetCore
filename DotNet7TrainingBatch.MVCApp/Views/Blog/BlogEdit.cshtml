@@ -1,0 +1,18 @@
+﻿@model BlogModel
+
+
+<form action="/Blog/Update/@Model.blog_id" method="put">
+
+<div class="form-floating mb-3">
+    <input type="text" class="form-control" id="title" name="blog_title" placeholder="title" value="@Model.blog_title">
+    <label for="floatingInput">Title</label></div>
+<div class="form-floating mb-3">
+        <input type="text" class="form-control" id="author" name="blog_author" placeholder="author" value="@Model.blog_author">
+    <label for="floatingPassword">Password</label>
+</div>
+<div class="form-floating mb-3">
+        <input type="text" class="form-control" id="content" placeholder="content" name="blog_content" value="@Model.blog_content">
+    <label for="floatingPassword">Content</label>
+</div>
+<button type="submit" class="btn btn-primary">Update</button>
+</form>

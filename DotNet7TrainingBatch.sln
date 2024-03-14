@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNet7TrainingBatch.Consol
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNet7TrainingBatch.WebApi", "DotNet7TrainingBatch.WebApi\DotNet7TrainingBatch.WebApi.csproj", "{73D5FB6F-5D34-4A80-A78E-4FBDF9C0C9E9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNet7TrainingBatch.BridWebApi", "DotNet7TrainingBatch.BridWebApi\DotNet7TrainingBatch.BridWebApi.csproj", "{78CFAF7F-BC95-4F08-A800-840CC9F2BC40}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNet7TrainingBatch.BridWebApi", "DotNet7TrainingBatch.BridWebApi\DotNet7TrainingBatch.BridWebApi.csproj", "{78CFAF7F-BC95-4F08-A800-840CC9F2BC40}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNet7TrainingBatch.MVCApp", "DotNet7TrainingBatch.MVCApp\DotNet7TrainingBatch.MVCApp.csproj", "{CCE2F267-4759-4891-AD18-E9E370D69FB8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{78CFAF7F-BC95-4F08-A800-840CC9F2BC40}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{78CFAF7F-BC95-4F08-A800-840CC9F2BC40}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{78CFAF7F-BC95-4F08-A800-840CC9F2BC40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCE2F267-4759-4891-AD18-E9E370D69FB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCE2F267-4759-4891-AD18-E9E370D69FB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCE2F267-4759-4891-AD18-E9E370D69FB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCE2F267-4759-4891-AD18-E9E370D69FB8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -7,8 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DotNet7TrainingBatch.WebApi
-
+namespace DotNet7TrainingBatch.MVCApp
 {
     public class AppDbContext : DbContext
     {
