@@ -1,0 +1,37 @@
+﻿@model List<BlogModel>
+@{
+    ViewData["Title"] = "Blog";
+    int count = 0;
+}
+
+<a href="/BlogAjax/Create" class="btn btn-sm btn-success">New</a>
+<div class="text-center">
+    <section>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th> action</th>
+                    <th scope="col">#</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Content</th>
+                    <th scope="col">Author</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (BlogModel item in Model)
+                {
+                    <tr>
+                        <td>
+                            <a class="btn btn-primary" href="/BlogAjax/Edit/@item.blog_id" role="button">Edit</a>
+                            <a class="btn btn-danger" href="/BlogAjax/Delete/@item.blog_id" role="button">Delete</a>
+                        </td>
+                        <td>@(++count)</td>
+                        <td scope="row">@item.blog_title</td>
+                        <td>@item.blog_content</td>
+                        <td>@item.blog_author</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </section>
+</div>

@@ -1,0 +1,54 @@
+﻿<form action="/Blog/Save" method="post">
+
+    <div class="form-floating mb-3">
+        <input type="title" class="form-control" id="title" placeholder="title" name="blog_title">
+        <label for="floatingInput">Title</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input type="author" class="form-control" id="author" placeholder="author" name="blog_author">
+        <label for="floatingPassword">Password</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input type="content" class="form-control" id="content" placeholder="content" name="blog_content">
+        <label for="floatingPassword">Content</label>
+    </div>
+    <button type="button" class="btn btn-primary" id="btn-save">Save</button>
+</form>
+
+@section script {
+    <script>
+        $("#btn-save").click(e => {
+            const title = $("#title").val();
+            const author = $("#author").val();
+            const content = $("#content").val();
+
+            const _reqModel = {
+                blog_title : title,
+                blog_author : author,
+                blog_content : content,
+            }
+
+            $.ajax({
+                url: "/BlogAjax/Save",
+                data: { blog: _reqModel },
+                type: "POST",
+                dataType: "json",
+                success: () => {
+                    Swal.fire({
+                        title: "success",
+                        showDenyButton: true,
+                        showCancelButton: false,
+                        confirmButtonText: "ok",
+                    }).then((result) => {
+                        /* Read more about isConfirmed, isDenied below */
+                        if (result.isConfirmed) {
+                            window.location = "https://localhost:7280/BlogAjax/";
+                        }
+                    });
+                },
+                error : (err) => console.log(err)
+            });
+
+        });
+    </script>
+}
