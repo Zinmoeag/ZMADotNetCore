@@ -23,7 +23,12 @@
                     <tr>
                         <td>
                             <a class="btn btn-primary" href="/BlogAjax/Edit/@item.blog_id" role="button">Edit</a>
-                            <a class="btn btn-danger" href="/BlogAjax/Delete/@item.blog_id" role="button">Delete</a>
+                            <button
+                            type="button"
+                            class="btn btn-danger btn-delete"
+                            data-blog-id ="@item.blog_id">
+                                Delete
+                            </button>
                         </td>
                         <td>@(++count)</td>
                         <td scope="row">@item.blog_title</td>
@@ -35,3 +40,55 @@
         </table>
     </section>
 </div>
+
+
+@section script {
+    <script>
+        $(".btn-delete").click(function(e){
+            const BlogId = $(this).data("blog-id");
+
+            Swal.fire({
+                title: "success",
+                showDenyButton: true,
+                showCancelButton: false,
+                confirmButtonText: "ok",
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    
+                    deleteBlog(BlogId);
+                }
+            });
+        })
+
+
+        const deleteBlog = (id) => {
+
+            const _reqModel = {
+                blog_id : id,
+            }
+
+            console.log(_reqModel)
+
+            $.ajax({
+                url: "/BlogAjax/Delete",
+                data: { blog: _reqModel },
+                type: "POST",
+                dataType: "json",
+                success: (result) => {
+                    if (result.isSuccess) {
+                        Swal.fire({
+                            title: "success",
+                            text : result.message,
+                            confirmButtonText: "ok",
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                window.location = "https://localhost:7280/BlogAjax/";
+                            }
+                        });
+                    }
+                },
+                error: (err) => console.log(err)
+            });
+        }
+    </script>
+}

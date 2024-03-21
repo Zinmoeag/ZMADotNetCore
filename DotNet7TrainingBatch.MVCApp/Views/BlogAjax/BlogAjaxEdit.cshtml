@@ -32,22 +32,24 @@
             }
 
             $.ajax({
-                url: "/BlogAjax/Save",
+                url: `/BlogAjax/Update/@Model.blog_id`,
                 data: { blog: _reqModel },
                 type: "POST",
                 dataType: "json",
-                success: () => {
-                    Swal.fire({
-                        title: "success",
-                        showDenyButton: true,
-                        showCancelButton: false,
-                        confirmButtonText: "ok",
-                    }).then((result) => {
-                        /* Read more about isConfirmed, isDenied below */
-                        if (result.isConfirmed) {
-                            window.location = "https://localhost:7280/BlogAjax/";
-                        }
-                    });
+                success: (result) => {
+                    if(result.isSuccess){
+                        Swal.fire({
+                            title: "success",
+                            showDenyButton: true,
+                            showCancelButton: false,
+                            confirmButtonText: "ok",
+                        }).then((result) => {
+                            /* Read more about isConfirmed, isDenied below */
+                            if (result.isConfirmed) {
+                                window.location = "https://localhost:7280/BlogAjax/";
+                            }
+                        });
+                    }
                 },
                 error: (err) => console.log(err)
             });

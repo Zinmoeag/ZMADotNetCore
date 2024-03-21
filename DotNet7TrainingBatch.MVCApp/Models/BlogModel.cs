@@ -18,4 +18,11 @@ namespace DotNet7TrainingBatch.MVCApp.Models
         public string blog_content { get; set; }
 
     }
+
+
+    public class BlogResponseModel
+    {
+        public bool isSuccess { get; set; }
+        public string message { get; set; }  
+    }
 }

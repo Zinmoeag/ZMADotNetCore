@@ -46,14 +46,17 @@ namespace DotNet7TrainingBatch.MVCApp.Controllers
         public IActionResult BlogSave(BlogModel blog)
         {
             _db.Blogs.Add(blog);
-            _db.SaveChanges();
+            int result = _db.SaveChanges();
+            bool isSuccess = result > 0;
+            BlogResponseModel blogResponse = new BlogResponseModel {
+                isSuccess = isSuccess,
+                message = isSuccess ? "saving successfull" : "saving failed",
+            };
 
-            return Json("Index");
-
-            ddd
+            return Json(blogResponse);
         }
 
-        [HttpPut]
+        [HttpPost]
         [ActionName("Update")]
         public IActionResult BlogUpdate(int id, BlogModel blog)
         {
@@ -61,30 +64,55 @@ namespace DotNet7TrainingBatch.MVCApp.Controllers
 
             if(item is null)
             {
-                return Redirect("/Blog");
+                BlogResponseModel blogResponse = new BlogResponseModel
+                {
+                    isSuccess = false,
+                    message = "not data found",
+                };
+                return Json(blogResponse);
             }
 
             item.blog_title = blog.blog_title;
             item.blog_author = blog.blog_author;
             item.blog_content = blog.blog_content;
-            _db.SaveChanges();
+            int result = _db.SaveChanges();
+            bool isSuccess = result > 0;
 
-            return Redirect("/Blog");
+            BlogResponseModel blogResponseModel = new BlogResponseModel
+            {
+                isSuccess = isSuccess,
+                message = isSuccess ? "updating successful" : "updating failed",
+            };
+
+            return Json(blogResponseModel);
 
         }
 
+        [HttpPost]
         [ActionName("Delete")]
-        public IActionResult DeleteBlog(int id)
+        public IActionResult DeleteBlog(BlogModel blog)
         {
-            BlogModel blog = _db.Blogs.FirstOrDefault(item => item.blog_id == id);
+            BlogModel item = _db.Blogs.FirstOrDefault(item => item.blog_id == blog.blog_id);
 
             if(blog is null) {
-                return Redirect("/Blog");
+                BlogResponseModel blogMessageResponse = new BlogResponseModel
+                {
+                    isSuccess = false,
+                    message = "not data found",
+                };
+                return Json(blogMessageResponse);
             }
 
-            _db.Remove(blog);
-            _db.SaveChanges();
-            return Redirect("/Blog");
+            _db.Remove(item);
+            int result = _db.SaveChanges();
+            bool isSuccess = result > 0;
+
+            BlogResponseModel blogResponse = new BlogResponseModel
+            {
+                isSuccess = isSuccess,
+                message = isSuccess ? "deleting successful" : "deleting failed",
+            };
+            return Json(blogResponse);
         }
     }
 }
